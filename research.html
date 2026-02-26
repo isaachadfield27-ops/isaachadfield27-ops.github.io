@@ -20,25 +20,51 @@
   <h2>Research</h2>
 
   <h3>Publications</h3>
-  <ul class="publications">
-    <li>
-      “Title of Paper.” <em>Journal Name</em>, 2024.
+  <ul class="publications" id="pub-list">
+
+    <li data-year="2024">
+      <strong>“Title of Paper.”</strong>
+      <em>Journal Name</em>, 2024.
+      <details>
+        <summary>Abstract</summary>
+        <p>
+          This paper argues that...
+        </p>
+      </details>
     </li>
-    <li>
-      “Another Paper.” <em>Another Journal</em>, 2022.
+
+    <li data-year="2022">
+      <strong>“Earlier Paper.”</strong>
+      <em>Another Journal</em>, 2022.
+      <details>
+        <summary>Abstract</summary>
+        <p>
+          In this article I develop...
+        </p>
+      </details>
     </li>
+
   </ul>
 
   <h3>Work in Progress</h3>
   <ul>
     <li>Project title and short description.</li>
   </ul>
-
 </main>
 
 <footer>
   <p>© 2026 Your Name</p>
 </footer>
 
+  <script>
+  const list = document.getElementById('pub-list');
+  const items = Array.from(list.children);
+
+  items.sort((a, b) => {
+    return b.dataset.year - a.dataset.year;
+  });
+
+  items.forEach(item => list.appendChild(item));
+</script>
 </body>
 </html>
